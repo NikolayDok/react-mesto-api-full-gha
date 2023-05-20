@@ -1,0 +1,9 @@
+.content {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+padding: 0 19px;
+  }
+}

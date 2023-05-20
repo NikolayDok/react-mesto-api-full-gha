@@ -1,0 +1,15 @@
+.page {
+  font-family: "Inter", Arial, sans-serif;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 19px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+  .page {
+    padding: 0;
+  }
+}

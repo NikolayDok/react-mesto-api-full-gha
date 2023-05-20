@@ -1,0 +1,15 @@
+.authorization__link-login {
+  text-decoration: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.authorization__link-login:hover {
+  opacity: 0.6;
+}

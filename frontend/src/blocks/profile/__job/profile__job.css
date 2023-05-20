@@ -1,0 +1,18 @@
+.profile__job {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+}
+
+@media screen and (max-width: 930px) {
+  .profile__job {
+    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (930 - 320)));
+    line-height: calc(17px + (22 - 17) * ((100vw - 320px) / (930 - 320)));
+  }
+}

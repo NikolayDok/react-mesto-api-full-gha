@@ -1,0 +1,8 @@
+.cards__info {
+  display: grid;
+  grid: 1fr/1fr auto;
+  padding: 26px 20px;
+  column-gap: 30px;
+  row-gap: 3px;
+  align-items: baseline;
+}

@@ -1,0 +1,3 @@
+.cards__likes-btn_active {
+  background: no-repeat center/cover url('../../../../images/likes-btn_black.svg');
+}

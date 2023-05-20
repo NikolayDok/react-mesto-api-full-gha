@@ -1,0 +1,18 @@
+.profile {
+  display: grid;
+  grid: 1fr/auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 0 0;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .profile {
+    grid: repeat(3, auto)/auto;
+    grid-auto-flow: column;
+    justify-items: center;
+    gap: 28px;
+  }
+}
+

@@ -1,0 +1,13 @@
+.authorization__input {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #cccccc;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  min-width: 358px;
+  padding: 13px 0;
+}
