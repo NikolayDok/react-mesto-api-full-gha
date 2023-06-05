@@ -176,18 +176,19 @@ function App() {
     setIsInfoTooltipPopupOpen(false);
   };
 
-  // React.useEffect(() => {
-  //   if (loggedIn) {
-  //     Promise.all([api.getUserInfo(), api.getInitialCards()])
-  //       .then(([dataUser, dataCard]) => {
-  //         setCurrentUser(dataUser);
-  //         setCards(dataCard);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }
-  // }, [loggedIn]);
+  React.useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
+    if (jwt) {
+      Promise.all([api.getUserInfo(), api.getInitialCards()])
+        .then(([dataUser, dataCard]) => {
+          setCurrentUser(dataUser);
+          setCards(dataCard);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [loggedIn]);
 
   React.useEffect(() => {
     checkToken();
@@ -204,14 +205,6 @@ function App() {
             setLoggedIn(true);
             navigate("/", { replace: true });
           }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        Promise.all([api.getUserInfo(), api.getInitialCards()])
-        .then(([dataUser, dataCard]) => {
-          setCurrentUser(dataUser);
-          setCards(dataCard);
         })
         .catch((err) => {
           console.log(err);
