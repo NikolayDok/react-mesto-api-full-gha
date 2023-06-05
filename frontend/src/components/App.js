@@ -154,7 +154,7 @@ function App() {
     api
       .deleteCardApi(card._id)
       .then(() => {
-        setCards((state) => state.filter((c) => c._id !== card._id));
+        setCards((state) => state.filter((id) => id !== card._id));
         closeAllPopups();
       })
       .catch((err) => {
