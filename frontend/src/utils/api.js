@@ -78,6 +78,10 @@ class Api {
 //Api
 const configApi = {
   url: "https://api.ndok.nomoredomains.monster",
+  headers: {
+    authorization: `Bearer ${localStorage.getItem('jwt')}`,
+    "Content-Type": "application/json",
+  },
 };
 
 const api = new Api(configApi);
