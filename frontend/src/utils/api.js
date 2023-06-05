@@ -77,11 +77,7 @@ class Api {
 
 //Api
 const configApi = {
-  url: "https://mesto.nomoreparties.co/v1/cohort-58",
-  headers: {
-    authorization: "1ecbbea3-4e9e-4d1f-ac87-f48debc46fcc",
-    "Content-Type": "application/json",
-  },
+  url: "https://api.ndok.nomoredomains.monster",
 };
 
 const api = new Api(configApi);
