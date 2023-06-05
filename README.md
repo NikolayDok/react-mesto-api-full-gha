@@ -8,8 +8,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.103.29
 
-Frontend https://...
+Frontend https://ndok.nomoredomains.monster
 
-Backend https://...
+Backend https://api.ndok.nomoredomains.monster

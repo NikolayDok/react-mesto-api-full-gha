@@ -23,6 +23,7 @@ node_modules
 
 # testing
 /coverage
+/.vscode
 
 # production
 /build

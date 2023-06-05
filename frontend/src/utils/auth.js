@@ -1,4 +1,4 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = "https://api.ndok.nomoredomains.monster";
 
 const getResponse = (response) => {
   if (response.ok) {
