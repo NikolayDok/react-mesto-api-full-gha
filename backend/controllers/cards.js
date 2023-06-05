@@ -95,6 +95,7 @@ const dislikeCard = (req, res, next) => {
     { $pull: { likes: req.user._id } },
     { new: true },
   )
+    .populate('owner')
     .orFail(() => {
       throw new NotFoundError('Карточка не найдена');
     })
