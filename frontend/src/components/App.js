@@ -112,7 +112,7 @@ function App() {
   };
 
   const handleCardLike = (card) => {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((id) => id === currentUser._id);
 
     api
       .changeLikeCardStatus(card._id, !isLiked)
@@ -192,7 +192,7 @@ function App() {
 
   React.useEffect(() => {
     checkToken();
-  }, [loggedIn]);
+  }, []);
 
   const checkToken = () => {
     const jwt = localStorage.getItem("jwt");

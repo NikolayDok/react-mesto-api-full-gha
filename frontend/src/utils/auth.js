@@ -30,13 +30,13 @@ export const login = (email, password) => {
   }).then(getResponse);
 };
 
-export const getToken = () => {
+export const getToken = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      Authorization: `Bearer ${token}`,
     },
   }).then((response) => {
     return getResponse(response);
