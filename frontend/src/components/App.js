@@ -176,22 +176,22 @@ function App() {
     setIsInfoTooltipPopupOpen(false);
   };
 
-  React.useEffect(() => {
-    if (loggedIn) {
-      Promise.all([api.getUserInfo(), api.getInitialCards()])
-        .then(([dataUser, dataCard]) => {
-          setCurrentUser(dataUser);
-          setCards(dataCard);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [loggedIn]);
+  // React.useEffect(() => {
+  //   if (loggedIn) {
+  //     Promise.all([api.getUserInfo(), api.getInitialCards()])
+  //       .then(([dataUser, dataCard]) => {
+  //         setCurrentUser(dataUser);
+  //         setCards(dataCard);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }
+  // }, [loggedIn]);
 
   React.useEffect(() => {
     checkToken();
-  }, []);
+  }, [loggedIn]);
 
   const checkToken = () => {
     const jwt = localStorage.getItem("jwt");
@@ -200,10 +200,18 @@ function App() {
         .getToken(jwt)
         .then((response) => {
           if (response) {
-            setUserEmail(response.data.email);
+            setUserEmail(response.email);
             setLoggedIn(true);
             navigate("/", { replace: true });
           }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+        Promise.all([api.getUserInfo(), api.getInitialCards()])
+        .then(([dataUser, dataCard]) => {
+          setCurrentUser(dataUser);
+          setCards(dataCard);
         })
         .catch((err) => {
           console.log(err);
