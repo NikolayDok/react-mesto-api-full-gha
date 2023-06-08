@@ -25,7 +25,6 @@ const createCard = (req, res, next) => {
 
 const getCards = (req, res, next) => {
   Card.find({})
-    .populate('owner')
     .then((cards) => {
       res.send(cards);
     })
@@ -73,7 +72,6 @@ const likeCard = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
-    .populate('owner')
     .orFail(() => {
       throw new NotFoundError('Карточка не найдена');
     })
