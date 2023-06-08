@@ -40,7 +40,6 @@ const getCards = (req, res, next) => {
 
 const deleteCard = (req, res, next) => {
   Card.findById(req.params.cardId)
-    .populate('owner')
     .orFail(() => {
       throw new NotFoundError('Карточка не найдена');
     })

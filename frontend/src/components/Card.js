@@ -42,14 +42,14 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
         ></button>
         <span className="cards__likes-counter">{card.likes.length}</span>
       </div>
-      {isOwn && (
+      {isOwn && 
         <button
           onClick={handleDeleteClick}
           className=" cards__delete-btn"
           type="button"
           aria-label="Delete"
         ></button>
-      )}
+      }
     </li>
   );
 }
