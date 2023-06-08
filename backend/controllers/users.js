@@ -26,9 +26,9 @@ const login = (req, res, next) => {
           if (!matched) {
             throw new UnauthorizedError('Пароль или email неверные');
           }
-          const token = jwt.sign({ _id: user._id }, 'some-secret-key', {
-            expiresIn: '7d',
-          });
+          const token = jwt.sign({ _id: user._id },
+            process.env.NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+            {expiresIn: '7d',});
           res.status(REQUEST_SUCCESSFUL_CODE).send({ token });
         })
         .catch((err) => {
